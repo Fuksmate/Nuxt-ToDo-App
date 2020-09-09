@@ -1,0 +1,191 @@
+// Utils | Repeatable:
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: montserrat, sans-serif;
+  color: #000000;
+  font-size: rem(14px);
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+a,
+button {
+  color: inherit;
+  outline: none;
+}
+
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-center-mobile {
+  text-align: center;
+
+  @include desktop {
+    text-align: left;
+  }
+}
+
+.text-center-desktop {
+  @include desktop {
+    text-align: center;
+  }
+}
+
+.text-right-desktop {
+  @include desktop {
+    text-align: right;
+  }
+}
+
+.relative {
+  position: relative;
+}
+
+.fullwidth {
+  width: 100%;
+}
+
+.hide-small {
+  display: none;
+
+  @include desktop {
+    display: block;
+  }
+}
+
+.hide-tablet {
+  @include tablet {
+    display: none;
+  }
+}
+
+.hide-until-tablet {
+  display: none;
+
+  @include tablet {
+    display: initial;
+  }
+}
+
+.hide-large {
+  @include desktop {
+    display: none;
+  }
+}
+
+.beige-bg {
+  background: $beige;
+}
+
+.white-bg {
+  background: #fff;
+}
+
+.global-padding {
+  padding: 0 10px;
+
+  @include desktop {
+    padding: 0 120px;
+  }
+
+  @include hd-desktop {
+    padding: 0 250px;
+  }
+}
+
+.section-margin {
+  margin-top: 20px;
+}
+
+.page-padding-top {
+  padding-top: 95px;
+  
+  @include desktop {
+    padding-top: 65px;
+  }
+}
+
+.small-header {
+  font-size: rem(14px);
+  text-transform: uppercase;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+  letter-spacing: 1.5px;
+}
+
+.vervine {
+  font-family: verveine, sans-serif;
+  font-weight: 400;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #DBDBDB;
+}
+
+.tooltip {
+  background-color: $green;
+  color: #fff;
+  font-size: 10px;
+  left: -30px;
+  padding: 2px;
+  position: absolute;
+  text-align: center;
+  top: 100%;
+  visibility: hidden;
+  width: 80px;
+  z-index: 1;
+}

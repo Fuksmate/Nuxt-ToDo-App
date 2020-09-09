@@ -1,0 +1,25 @@
+.btn {
+  padding: 10px 37px;
+  font-size: rem(12px);
+  display: inline-block;
+  color: $green;
+  border: 1px solid $green;
+  border-radius: 20px;
+  transition: 0.45s ease;
+  background: white;
+  font-weight: 500;
+
+  &:hover {
+    background: $green;
+    color: white;
+  }
+
+  &--green {
+    background: $green;
+    color: white;
+    &:hover {
+      color: $green;
+      background: transparent;
+    }
+  }
+}
