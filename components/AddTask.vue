@@ -1,21 +1,22 @@
 <template>
     <div class="columns">
-        <form @submit="addTask" class="medium-1">
-            <input
-                @value="title"
-                type="text"
-                placeholder="Title"
-            >
-            <input
-                @value="description"
-                type="text"
-                placeholder="Description"
-            >
-            <input
-                type="submit"
-                value="Add"
-            >
-        </form>
+      <input
+        @value="title"
+        type="text"
+        ref="titleInput"
+        placeholder="Title"
+      >
+      <input
+        @value="description"
+        type="text"
+        ref="descriptionInput"
+        placeholder="Description"
+      >
+      <input
+        type="submit"
+        value="Add"
+        @click="addTask"
+      >
     </div>
 </template>
 
@@ -34,9 +35,16 @@ export default {
 
   },
   methods: {
-    addTask: function (){
-      console.log("siema");
+    addTask() {
+      this.$store.commit('options/ADD_TODO', 'asd'); 
+      this.reset();
     },
+    reset() {
+      const input = this.$refs.titleInput
+      const inputa = this.$refs.descriptionInput
+      input.value = ''
+      inputa.value = ''
+    }
   },
 }
 </script>
