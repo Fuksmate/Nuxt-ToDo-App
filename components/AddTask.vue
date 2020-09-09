@@ -1,13 +1,13 @@
 <template>
     <div class="columns">
       <input
-        @value="title"
+        @value="data.title"
         type="text"
         ref="titleInput"
         placeholder="Title"
       >
       <input
-        @value="description"
+        @value="data.description"
         type="text"
         ref="descriptionInput"
         placeholder="Description"
@@ -27,23 +27,27 @@ export default {
   name: 'IndexPage',
   data () {
     return {
-      title: '',
-      description: '',
+      data: {
+        title: '',
+        description: '',
+      }
     }
   },
   components: {
 
   },
   methods: {
-    addTask() {
-      this.$store.commit('options/ADD_TODO', 'asd'); 
-      this.reset();
+    toStore() {
+      this.$store.commit('options/ADD_TODO', this.data); 
     },
-    reset() {
-      const input = this.$refs.titleInput
-      const inputa = this.$refs.descriptionInput
-      input.value = ''
-      inputa.value = ''
+    addTask() {
+      const title = this.$refs.titleInput
+      const description = this.$refs.descriptionInput
+      this.data.title = title.value;
+      this.data.description = description.value;
+      this.toStore();
+      title.value = ''
+      description.value = ''
     }
   },
 }

@@ -1,12 +1,14 @@
 export const state = () => ({
-    data: [],
+    data: {
+        title: [],
+        description: [],
+    }
 })
 
 export const mutations = {
-    ADD_TODO (state, title) {
-      state.data = title;
-      console.log(title);
-      console.log("asd");
+    ADD_TODO (state, data) {
+      state.data.title.push(data.title);
+      state.data.description.push(data.description);
     },
   }
   
