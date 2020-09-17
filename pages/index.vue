@@ -1,12 +1,13 @@
 <template>
-  <div class="row container">
-    <div class="columns">
+  <div>
+    <div class="columns small-12 creativeTask">
       <AddTask />
     </div>
-    <main class="columns small-12">
-
-      
-
+    <main class="row small-11 medium-9">
+        <div v-for="(item, index) in this.$store.state.options.data.title" :key="index" class="columns small-12 medium-3">
+          <BaseTask :index="index" />
+          <br>
+        </div>
     </main>
   </div>
 </template>
@@ -22,24 +23,17 @@ export default {
     }
   },
   components: {
+    AddTask,
+    BaseTask
 
-  },
-  methods: {
-    addTask: function (){
-      console.log("siema");
-    },
   },
 }
 </script>
 
 <style lang="scss">
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+.creativeTask {
+  height: 25vh;
+  margin-bottom: 10px;
+  position: relative;
 }
-
 </style>

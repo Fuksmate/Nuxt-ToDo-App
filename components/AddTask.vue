@@ -1,5 +1,5 @@
 <template>
-    <div class="columns">
+    <div class="columns addTask small-4">
       <input
         @value="data.title"
         type="text"
@@ -21,10 +21,8 @@
 </template>
 
 <script>
-import BaseTask from '~/components/BaseTask.vue'
-import AddTask from '~/components/AddTask.vue'
 export default {
-  name: 'IndexPage',
+  name: 'AddTask',
   data () {
     return {
       data: {
@@ -33,16 +31,13 @@ export default {
       }
     }
   },
-  components: {
-
-  },
   methods: {
     toStore() {
       this.$store.commit('options/ADD_TODO', this.data); 
     },
     addTask() {
-      const title = this.$refs.titleInput
-      const description = this.$refs.descriptionInput
+      const title = this.$refs.titleInput;
+      const description = this.$refs.descriptionInput;
       this.data.title = title.value;
       this.data.description = description.value;
       this.toStore();
@@ -54,4 +49,16 @@ export default {
 </script>
 
 <style lang="scss">
+.addTask {
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  transform: translate(-50%);
+  input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+}
 </style>
