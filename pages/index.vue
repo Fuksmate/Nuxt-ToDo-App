@@ -3,8 +3,8 @@
     <div class="columns small-12 creativeTask">
       <AddTask />
     </div>
-    <main class="row small-11 medium-9">
-        <div v-for="(item, index) in this.$store.state.options.data.title" :key="index" class="columns small-12 medium-3">
+    <main class="row small-3 small-centered columns">
+        <div v-for="(item, index) in this.$store.state.options.data.title" :key="index">
           <BaseTask :index="index" />
           <br>
         </div>
