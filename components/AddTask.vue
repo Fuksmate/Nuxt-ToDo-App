@@ -7,15 +7,9 @@
         placeholder="Title"
       >
       <input
-        @value="data.description"
-        type="text"
-        ref="descriptionInput"
-        placeholder="Description"
-      >
-      <input
         type="submit"
         value="Add"
-        @click="addTask"
+        @click="addCategory"
       >
     </div>
 </template>
@@ -27,7 +21,6 @@ export default {
     return {
       data: {
         title: '',
-        description: '',
       }
     }
   },
@@ -35,14 +28,15 @@ export default {
     toStore() {
       this.$store.commit('options/ADD_TODO', this.data); 
     },
-    addTask() {
+    addCategory() {
       const title = this.$refs.titleInput;
-      const description = this.$refs.descriptionInput;
-      this.data.title = title.value;
-      this.data.description = description.value;
-      this.toStore();
-      title.value = ''
-      description.value = ''
+      if(title.value === ''){
+        return
+      }else {
+        this.data.title = title.value;
+        this.toStore();
+        title.value = ''
+      }
     }
   },
 }

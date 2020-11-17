@@ -1,14 +1,16 @@
 export const state = () => ({
     data: {
         title: [],
-        description: [],
+        task: [],
     }
 })
 
 export const mutations = {
     ADD_TODO (state, data) {
-      state.data.title.push(data.title);
-      state.data.description.push(data.description);
+      state.data.title.push(data.title)
+    },
+    ADD_TASK (state, data) {
+      state.data.task.push(data.task)
     },
   }
   
