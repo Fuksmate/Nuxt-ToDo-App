@@ -26,11 +26,7 @@ export default {
 
 <style lang="scss">
 .baseTask {
-<<<<<<< HEAD
     border: 1px solid black;
-=======
-    background-color: #fff;
->>>>>>> 49dd285b34ced216a53461e9ed48707466043b00
     color: #2E2A2A;
     height: 100px;
     position: relative;
