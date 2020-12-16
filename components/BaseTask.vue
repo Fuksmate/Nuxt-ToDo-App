@@ -1,8 +1,8 @@
+
 <template>
     <div class="baseTask">
-        <div class="baseTask--title">{{ title(index) }} </div>
-        <span class="baseTask--description">{{ description(index) }}</span>
-        <input class="baseTask--checkbox" type="checkbox" id="scales" name="scales">
+        <div v-bind:class="{'class1': class1}" class="baseTask--title">{{ title(index) }} </div>
+         <input v-model="class1" class="baseTask--checkbox" type="checkbox" id="scales" name="scales">
     </div>
 </template>
 
@@ -10,41 +10,44 @@
 export default {
   name: 'BaseTask',
   props: ['index'],
+  data() {
+    return {
+      class1: false
+    }
+  },
   methods: {
     title(index) {
+
       return this.$store.state.options.data.title[index];
     },
-    description(index) {
-      return this.$store.state.options.data.description[index];
-    }
   },
 }
 </script>
 
 <style lang="scss">
 .baseTask {
-    background-color: grey;
-    color: #fff;
-    height: 400px;
+    border: 1px solid black;
+    color: #2E2A2A;
+    height: 100px;
     position: relative;
     &--title {
-        font-size: 18px;
-        text-align: center;
+        font-size: 16px;
         padding: 10px;
-    }
-    &--description {
-        font-size:16px;
-        padding: 20px;
-    }
-    &--checkbox {
-        width: 50px;
-        height: 50px;
         position: absolute;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        cursor: pointer;
-        border: 1px solid blue;
+        top: 50%;
+        transform: translateY(-50%);
     }
+    &--checkbox{
+        position: absolute;
+        top: 45%;
+        right: 2%;
+
+    }
+}
+input[type=checkbox] {
+    transform: scale(1.5);
+}
+.class1{
+ text-decoration: line-through;
 }
 </style>

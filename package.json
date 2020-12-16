@@ -12,5 +12,21 @@
     "foundation-sites": "^6.6.3",
     "nuxt": "^2.14.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "fibers": "^5.0.0",
+    "sass": "^1.30.0",
+    "sass-loader": "^10.1.0"
+  },
+  "description": "todo",
+  "main": "nuxt.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fuksmate/Nuxt-ToDo-App.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fuksmate/Nuxt-ToDo-App/issues"
+  },
+  "homepage": "https://github.com/Fuksmate/Nuxt-ToDo-App#readme"
 }
