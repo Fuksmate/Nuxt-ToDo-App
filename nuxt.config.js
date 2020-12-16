@@ -10,9 +10,13 @@ export default {
   ** See https://nuxtjs.org/api/configuration-target
   */
   target: 'static',
+<<<<<<< HEAD
   generate: {
     dir: 'my-site'
   },
+=======
+ 
+>>>>>>> 49dd285b34ced216a53461e9ed48707466043b00
   /*
   ** Headers of the page
   ** See https://nuxtjs.org/api/configuration-head

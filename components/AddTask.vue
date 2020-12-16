@@ -5,7 +5,10 @@
         type="text"
         ref="titleInput"
         placeholder="Title"
+<<<<<<< HEAD
         maxlength="48"
+=======
+>>>>>>> 49dd285b34ced216a53461e9ed48707466043b00
       >
       <input
         type="submit"
